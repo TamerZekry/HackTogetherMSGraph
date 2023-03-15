@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+ @if(User.Identity.IsAuthenticated)
+{
+    <h1> User Currently Loged in : @User.Identity.Name</h1>
+}
+else
+{
+    <h1>No user is currently Loged in :</h1>
+}
+
+<div>@ViewData["GraphApiResult"]</div>
+<div>@ViewData["GraphEmailResult"]</div>

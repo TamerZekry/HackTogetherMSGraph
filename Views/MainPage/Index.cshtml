@@ -1,0 +1,62 @@
+﻿@model MainPageData;
+@inject HackTogetherMSGraph.Services.UserProfile UserProfile
+@{
+     
+    var Profile = await UserProfile.GetUserProfile();
+
+}
+
+@{
+    ViewData["Title"] = "Main Page";
+}
+<h1 class="display-2 text-center">Main Page</h1>
+<h4 class="m-5 text-center">Some information about your account</h4>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-2 ">
+            <h5 class=" text-light bg-dark p-1"> Email used to log in </h5>
+        </div>   
+        <div class="col-10">
+            <h5>  @User.Identity.Name   </h5>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-2">
+            <h5 class="text-light bg-dark p-1"> User Name </h5>
+        </div>
+        <div class="col-10">
+            <h5> @Model.UserName </h5>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-2">
+            <h5 class="text-light bg-dark p-1"> Users Count </h5>
+        </div>
+        <div class="col-10">
+            <h5> @Model.UsersCount </h5>
+        </div>
+    </div>
+
+    <div class="row align-items-center">
+        <div class="col-2">
+            <h5 class="text-light bg-dark p-1"> Emails Count </h5>
+        </div>
+        <div class="col-10">
+            <h5> @Model.EmailsCount </h5>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-2">
+            <h5 class="text-light bg-dark p-1"> Groups Count </h5>
+        </div>
+        <div class="col-10">
+            <h5> @Model.GroupsCount </h5>
+        </div>
+    </div>
+</div>
+
+<h1 class="display-6 m-5 text-center p-5"> This is not even the tip of the iceberg of the Graph, But its a start to knowing how to use it!!! </h1>
+
+

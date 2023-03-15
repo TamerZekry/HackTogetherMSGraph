@@ -1,0 +1,65 @@
+﻿@inject HackTogetherMSGraph.Services.UserProfile UserProfile
+@{
+    
+    var Profile = await UserProfile.GetUserProfile();
+
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="flex-column d-flex ">
+        
+        <h6 class="text-success m-0"> Hi  @Profile.DisplayName </h6>
+        <a class="btn btn-success m-1 p-0 " href="https://login.microsoftonline.com/common/oauth2/v2.0/logout">Sign out</a>
+    </div>
+}
+else
+{
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+        </li>
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*  @if (User.Identity.IsAuthenticated)
+    {
+     @DisplayName.DisplayName
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+                @if (userProfileImage != null)
+                {
+                    <img src="data:image/jpeg;base64, @userProfileImage.Photo"
+                         class="user-photo-small   nav-profile-photo rounded-circle align-self-center mr-2" />
+                }
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <h5 class="dropdown-item-text mb-0">@DisplayName.DisplayName</h5>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://login.microsoftonline.com/common/oauth2/v2.0/logout">Sign out</a>
+            </div>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+        </li>
+    }*@
+    @*</ul>*@
