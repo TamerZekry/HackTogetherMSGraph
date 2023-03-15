@@ -86,17 +86,7 @@ namespace HackTogetherMSGraph.Services
         }
 
 
-        //public  int GetEmailsCount()
-        //{
-        //    //var emailsCount = await _graphServiceClient.Me.Messages.Count;
-        //    var emailsCount =     _graphServiceClient.Users.Request().GetAsync();
-
-
-
-
-        //    return     emailsCount.Result.Count ;
-
-        //}
+        
 
         public async Task<int> GetEmailsCount()
         {

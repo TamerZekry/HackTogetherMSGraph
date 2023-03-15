@@ -14,9 +14,9 @@ namespace HackTogetherMSGraph.Services
         public async Task<int> GetUsersCount()
         {
 
-            var userCount = _graphServiceClient.Users.Request().GetAsync();
+            var userCount =  await _graphServiceClient.Users.Request().GetAsync();
 
-            return userCount.Result.Count;
+            return userCount.Count ;
 
 
         }
